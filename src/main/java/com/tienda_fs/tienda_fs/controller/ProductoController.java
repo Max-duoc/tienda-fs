@@ -39,7 +39,7 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(productoGuardado);
     }
 
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Producto> actualizarProducto(@PathVariable Long id, @RequestBody Producto producto) {
         return  productoService.actualizarProducto(id, producto)
                 .map(ResponseEntity::ok)
